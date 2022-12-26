@@ -18,8 +18,8 @@ public class EmpController {
     @Autowired
     private EmpService service;
     @GetMapping("/")
-    public String homePage(){
-        return "index";
+    public String home(Model m){
+        return findPaginated(0, m);
     }
 
     @GetMapping("/add-emp")
